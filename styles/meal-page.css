@@ -1,0 +1,161 @@
+@font-face {
+    font-family: "PT-Sans";
+    src: url(../resources/fonts/PTSans/PTSans-Regular.ttf);
+}
+
+@font-face {
+	font-family: 'Lato-Light';
+	src: url(../resources/fonts/Lato/Lato-Light.ttf);
+}
+
+@font-face {
+	font-family: 'Montserrat-Regular';
+	src: url(../resources/fonts/Montserrat/static/Montserrat-Regular.ttf);
+}
+
+* {
+    margin : 0px;
+    padding: 0px;
+}
+
+
+body{
+    font-size: 20px;
+    user-select: none;
+    font-family: "PT-Sans";
+    color: white;
+    background-color: rgb(8,48,69);
+    overflow-y: scroll;
+}
+
+.heading-section h1{
+    text-align: center  ;
+    /* border: 2px solid orange; */
+    font-size: 3vw;
+    letter-spacing: 4px;
+    margin: 40px auto;
+    color: white;
+}
+
+.heading-section h1::after {
+    content: "";
+    display: block;
+    align-items: center;
+    margin-top: 2%;
+    margin-left: 45%;
+    width: 150px;
+    border-bottom: 2px solid white;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 2px solid blue; */
+}
+
+.meal-header {
+    /* border: 2px solid red; */
+    margin: 100px;
+}
+
+.meal-header #meal-image{
+    width: 300px;
+    /* border-bottom : 5px solid rgb(8,48,69); */
+    padding: 20px;
+    border-left: 3px solid white;
+    border-right: 3px solid rgb(233, 129, 204);
+    /* box-shadow: 2px 0px 10px 1px  rgb(6, 149, 80) inset, -2px 0px 10px 1px rgb(154, 9, 125)  inset; */
+}
+.meal-header h1 {
+    display: inline;
+    text-align: center;
+    letter-spacing: 4px;
+    padding: 40px;
+    float: right;
+    font-size: 25px;
+    font-family: 'Lato-Light';
+}
+
+.meal-header h1 i{
+   margin-left: 10px;
+   cursor: pointer;
+}
+
+.meal-instruction{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 60px 50px;
+}
+
+
+.meal-instruction table {
+    width: 30%;
+    text-align: center;
+}
+
+/* .meal-instruction table tr:nth-child(odd) {
+    background-color:rgb(41, 111, 148);
+    
+  } */
+
+.meal-instruction th{
+    background-color: rgb(38, 91, 135);
+    overflow-y:auto;
+    letter-spacing: 3px;
+}
+
+.meal-instruction td{
+    letter-spacing: 3px;
+    font-family: 'Lato-Light';
+}
+
+.meal-instruction table, th, td {
+    border:1px solid white;
+    border-collapse: collapse;
+    padding: 20px;
+
+}
+
+.meal-instruction table td:nth-child(1){
+    color: rgb(150, 220, 149);
+    font-weight: bold;
+}
+
+.meal-instruction .instruction {
+    width: 60%;
+    border-left: 2px solid white;
+    padding-left: 40px;
+}
+
+.meal-instruction .instruction p {
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    line-height: 40px;
+    text-transform: capitalize;
+    font-family: 'Lato-Light';
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+
+.meal-instruction .instruction a {
+ color:rgb(223, 96, 202);
+ text-decoration: none;
+ font-family: "Montserrat-Regular";
+}
+
+.meal-instruction .instruction a:hover {
+    color:rgb(150, 220, 149);
+    text-decoration: none;
+    font-family: "Montserrat-Regular";
+   }
+
+.show {
+    color: rgb(224, 130, 130); 
+}
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <p id="fav-meals"><span id="F">F</span>avourite&nbsp;&nbsp;<span id="M">M</span>eals</p> <i class="fa-solid fa-heart show" aria-hidden="true"></i>
+    </header>
+    <div class="main-content">
+      <div class="search-box-container">
+      <label for="search-box">
+        <h1>
+          <span id="M">M</span><span id="e">e</span><span id="a">a</span
+          ><span id="l">l</span><span id="s">s</span><span id="a">&nbsp;<span id="A">A</span
+          ><span id="a">p</span><span id="a">p</span>&nbsp;<i class="fa-solid fa-utensils"></i>
+        </h1>
+      </label>
+      <div class = "search-box-class">
+        <input type="text" name="search-box" id="search-box" autocomplete="off" placeholder="Search Meal"/>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+      <div class="suggestion-box">
+        <ul id="search-list"></ul>
+      </div>
+      <button type="button" id="show-more-btn">Show more</button>
+    </div>
+    <script type="module" src="index.js"></script>
+    <script src="https://kit.fontawesome.com/b3348ae33f.js" crossorigin="anonymous"></script>
+  </body>
+</html>

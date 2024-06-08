@@ -1,0 +1,158 @@
+@font-face {
+    font-family: "PT-Sans";
+    src: url(../resources/fonts/PTSans/PTSans-Regular.ttf);
+}
+
+@font-face {
+	font-family: 'Lato-Light';
+	src: url(../resources/fonts/Lato/Lato-Light.ttf);
+}
+
+@font-face {
+	font-family: 'Montserrat-Regular';
+	src: url(../resources/fonts/Montserrat/static/Montserrat-Regular.ttf);
+}
+
+* {
+    margin : 0px;
+    padding: 0px;
+}
+
+
+body{
+    font-size: 20px;
+    user-select: none;
+    font-family: "PT-Sans";
+    color: white;
+    background-color: rgb(8,48,69);
+    overflow-y: scroll;
+}
+
+.heading-section h1{
+    text-align: center  ;
+    /* border: 2px solid orange; */
+    font-size: 3vw;
+    letter-spacing: 4px;
+    margin: 40px auto;
+    color: white;
+    }
+
+.heading-section h1::after {
+    content: "";
+    display: block;
+    align-items: center;
+    margin-top: 2%;
+    margin-left: 45%;
+    width: 150px;
+    border-bottom: 2px solid white;
+}
+
+.meal-cards-container .header {
+    text-align: center;
+}
+
+.meal-cards-container .header p {
+        display: inline-block;
+        box-sizing: border-box;
+        color: white;
+        font-family: 'Lato-Light';
+        font-size: 25px;
+        letter-spacing: 1px;
+        border-bottom: 2px solid transparent;
+        padding-bottom: 2px;
+}
+
+.meal-cards-container .header #F, .meal-cards-container .header #M{
+    font-weight: bold;
+    color: rgb(34, 240, 205);
+}
+
+.show {
+    color: rgb(224, 130, 130); 
+}
+
+
+#meal-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    padding-bottom: 50px;
+    /* border: 2px solid blue; */
+    justify-content: space-evenly;
+
+}
+
+.card {
+    position: relative;
+    /* border-top: 3px solid rgb(233, 129, 204); */
+    border-left: 3px solid white;
+    border-right: 3px solid rgb(233, 129, 204);
+    /* border-bottom: 3px solid white; */
+    box-sizing: border-box;
+    text-align: center;
+    /* box-shadow: -1px 1px 1px 2px white , 1px -1px 1px 2px  rgb(233, 129, 204); */
+    margin: 40px 20px;
+    width: 300px;
+    height: 300px;
+    overflow:hidden;
+    /* box-shadow: 2px 0px 10px 1px  rgb(6, 149, 80) inset, -2px 0px 10px 1px rgb(154, 9, 125)  inset; */
+}
+
+.card p {
+    margin: 10px;
+    text-align: center;
+}
+.card img {
+    /* display: block; */
+    width: 200px;
+    height: 200px;
+    margin-bottom: 25px;
+    border: 2px solid;
+}
+
+i.explore-btn, i.remove-btn{
+    cursor:pointer
+}
+
+i.remove-btn {
+    margin-top: 5%;
+    margin-left: 85%;
+    font-size: 1.2em;
+    color: rgb(228, 74, 100)
+}
+
+i.explore-btn {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 1.5em;
+    color: rgb(244, 111, 62);
+}
+
+i.remove-btn:hover {
+    color: rgb(231, 51, 81)
+}
+
+i.explore-btn:hover{
+    color: rgb(242, 86, 30);
+}
+
+.empty-cards-container{
+    text-align: center;
+}
+
+.empty-cards-container #backpacker-img{
+    width: 250px;
+}
+
+.empty-cards-container p {
+    margin-top: 40px;
+    font-size: 30px;
+    font-family: 'Lato-Light';
+
+}
+
+.hide {
+    display: none;
+}
