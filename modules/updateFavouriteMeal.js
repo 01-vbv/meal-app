@@ -1,14 +1,13 @@
 let mealsData;
 let favouriteMeal = {};
 
-if (
-  localStorage.getItem("favouriteMeal") !== "undefined" &&
-  localStorage.getItem("favouriteMeal") !== null
-) {
-  favouriteMeal = JSON.parse(localStorage.getItem("favouriteMeal"));
-}
-
 async function updateFavouriteMeal(event) {
+  if (
+    localStorage.getItem("favouriteMeal") !== "undefined" &&
+    localStorage.getItem("favouriteMeal") !== null
+  ) {
+    favouriteMeal = JSON.parse(localStorage.getItem("favouriteMeal"));
+  }
   event.stopPropagation();
   mealsData = JSON.parse(localStorage.getItem("mealsData"));
   let currNode = event.target;
