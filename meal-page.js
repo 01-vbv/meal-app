@@ -1,5 +1,7 @@
 import updateFavouriteMeal from "./modules/updateFavouriteMeal.js";
+import navigateToFavPage from "./modules/navigateToFavPage.js";
 
+const favMealsEle = document.getElementById("fav-meals");
 const headingEle = document.querySelector(".meal-header h1");
 const imageEle = document.getElementById("meal-image");
 const mealDescEle = document.getElementById("meal-desc");
@@ -52,3 +54,4 @@ videoInstrEle.innerHTML = `Video Intruction <i class="fa-solid fa-play"></i>`;
 videoInstrEle.setAttribute("href", targetMeal.strYoutube);
 
 tableEle.insertAdjacentHTML("beforeend", tableRow);
+favMealsEle.addEventListener("click", navigateToFavPage);

@@ -28,6 +28,31 @@ body{
     overflow-y: scroll;
 }
 
+header {
+    margin: auto auto auto 80vw;
+}
+header p {
+    display: inline-block;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+	font-family: 'Lato-Light';
+    font-size: 25px;
+    letter-spacing: 1px;
+    border-bottom: 2px solid transparent;
+    margin-top: 40px ;
+    transition: 1s border-bottom;
+}
+
+header #F, header #M{
+    font-weight: bold;
+    color: rgb(34, 240, 205);
+}
+
+header p:hover {
+    border-bottom: 2px solid rgb(245, 56, 141);
+}
+
 .heading-section h1{
     text-align: center  ;
     /* border: 2px solid orange; */
