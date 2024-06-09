@@ -14,7 +14,7 @@ await toggleLoader(loaderEle, mainContentEle, true, "inline-block");
 await showMealPage();
 await toggleLoader(loaderEle, mainContentEle, false, "flex");
 
-videoInstrEle.innerHTML = `Video Instruction <i class="fa-solid fa-play"></i>`;
+videoInstrEle.innerHTML = `Video Intruction <i class="fa-solid fa-play"></i>`;
 videoInstrEle.setAttribute("href", targetMeal.strYoutube);
 
 // tableEle.insertAdjacentHTML("beforeend", tableRow);

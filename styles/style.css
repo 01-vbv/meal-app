@@ -128,7 +128,7 @@ input {
 }
 
 #search-list li i {
-    padding-left: 20px;
+    margin-left: 20px;
 }
 
 #search-list li:hover{
