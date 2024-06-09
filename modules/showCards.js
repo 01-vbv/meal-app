@@ -14,21 +14,26 @@ if (
 
 let keys = Object.keys(favouriteMeal);
 let card;
-let mealName, image, removeBtn, exploreBtn;
+let mealName, removeBtn, exploreBtn;
 
 function showCards() {
   for (let i = 0; i < keys.length; i++) {
     card = document.createElement("div");
     card.classList.add("card");
     mealName = document.createElement("p");
-    image = document.createElement("img");
+    let image = document.createElement("img");
+    image.src = "resources/assests/v233-aum-24-cooking-42-job106.jpg";
     removeBtn = document.createElement("i");
     removeBtn.classList.add("fa-solid", "fa-circle-xmark", "remove-btn");
     removeBtn.setAttribute("id", keys[i]);
     exploreBtn = document.createElement("i");
     exploreBtn.classList.add("fa-solid", "fa-carrot", "explore-btn");
     mealName.textContent = favouriteMeal[keys[i]].strMeal;
-    image.setAttribute("src", favouriteMeal[keys[i]].strMealThumb);
+    let downloadingImage = new Image();
+    downloadingImage.onload = function () {
+      image.src = this.src;
+    };
+    downloadingImage.src = favouriteMeal[keys[i]].strMealThumb;
     removeBtn.addEventListener("click", removeFav);
     exploreBtn.firstChar = favouriteMeal[keys[i]].strMeal
       .toLowerCase()

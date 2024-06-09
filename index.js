@@ -3,11 +3,13 @@ import getSuggestions from "./modules/getSuggestions.js";
 import { updateMealsList } from "./modules/updateMealsList.js";
 import getValue from "./modules/getInputValue.js";
 import navigateToFavPage from "./modules/navigateToFavPage.js";
+import toggleLoader from "./modules/loader.js";
 
 const favMealsEle = document.getElementById("fav-meals");
 const searchboxEle = document.getElementById("search-box");
 const searchListEle = document.getElementById("search-list");
 const showMoreBtn = document.getElementById("show-more-btn");
+const loaderEle = document.querySelector(".loader");
 
 let mealsData;
 let list;
@@ -37,8 +39,10 @@ async function searchResult() {
     return;
   }
 
+  await toggleLoader(loaderEle, searchListEle, true, "flex");
   let firstChar = value.charAt(0);
   mealsData = await getMealsData(firstChar);
+  await toggleLoader(loaderEle, searchListEle, false, "flex");
 
   list = getSuggestions(value, mealsData);
 

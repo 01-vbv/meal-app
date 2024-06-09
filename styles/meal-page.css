@@ -73,7 +73,7 @@ header p:hover {
 }
 
 .main-content{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     /* border: 2px solid blue; */
@@ -181,6 +181,23 @@ header p:hover {
 
 .show {
     color: rgb(224, 130, 130); 
+}
+
+/************** Loader ****************/
+.loader {
+    display: inline-block;
+    margin-left: 47%;
+    margin-top: 60px;
+    color: white;
+    font-size: 6em;
+    text-align: center;
+    animation: spin 2s linear infinite;
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 

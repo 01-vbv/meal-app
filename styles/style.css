@@ -103,7 +103,7 @@ input {
 }
 
 #search-list{
-    display: flex;
+    display: none;
     margin-top: 50px;
     /* border: 2px solid purple; */
     /* align-items: center; */
@@ -159,6 +159,17 @@ button:hover{
 }
 
 
+/************** Loader ****************/
+.loader {
+    display: none;
+    margin-top: 60px;
+    color: white;
+    font-size: 4em;
+    animation: spin 2s linear infinite;
+}
 
 
-
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

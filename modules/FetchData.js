@@ -1,5 +1,3 @@
-import getValue from "./getInputValue.js";
-
 const searchboxEle = document.getElementById("search-box");
 
 let mealsData;
