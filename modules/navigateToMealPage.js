@@ -1,7 +1,6 @@
 import getMealsData from "./FetchData.js";
 
 async function navigateToMealPage(event) {
-  console.log(event.target);
   let mealsData = await getMealsData(event.target.firstChar);
   let targetMeal;
   let i;

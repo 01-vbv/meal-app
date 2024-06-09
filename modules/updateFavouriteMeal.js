@@ -23,7 +23,6 @@ async function updateFavouriteMeal(event) {
   } else {
     delete favouriteMeal[mealId];
   }
-  console.log(favouriteMeal);
   localStorage.setItem("favouriteMeal", JSON.stringify(favouriteMeal));
 }
 

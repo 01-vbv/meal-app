@@ -156,3 +156,21 @@ i.explore-btn:hover{
 .hide {
     display: none;
 }
+
+
+/************** Loader ****************/
+.loader {
+    display: inline-block;
+    margin-left: 47%;
+    margin-top: 60px;
+    color: white;
+    font-size: 6em;
+    text-align: center;
+    animation: spin 2s linear infinite;
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

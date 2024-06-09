@@ -1,4 +1,8 @@
 import { showCards } from "./modules/showCards.js";
+import toggleLoader from "./modules/loader.js";
+
+const loaderEle = document.querySelector(".loader");
+const cardContainer = document.querySelector(".meal-cards-container");
 
 let favouriteMeal = {};
 if (
@@ -8,4 +12,6 @@ if (
   favouriteMeal = JSON.parse(localStorage.getItem("favouriteMeal"));
 }
 
-showCards();
+await toggleLoader(loaderEle, cardContainer, true, "inline-block");
+await showCards();
+await toggleLoader(loaderEle, cardContainer, false, "block");

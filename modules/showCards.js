@@ -3,6 +3,8 @@ import removeFav from "./removeFav.js";
 
 const mealCardsEle = document.getElementById("meal-cards");
 const emptyFavContainer = document.querySelector(".empty-cards-container");
+const emptyContainerPara = document.querySelector(".empty-cards-container p");
+const backPackerImgEle = document.querySelector("#backpacker-img");
 
 let favouriteMeal = {};
 if (
@@ -16,7 +18,7 @@ let keys = Object.keys(favouriteMeal);
 let card;
 let mealName, removeBtn, exploreBtn;
 
-function showCards() {
+async function showCards() {
   for (let i = 0; i < keys.length; i++) {
     card = document.createElement("div");
     card.classList.add("card");
@@ -48,16 +50,17 @@ function showCards() {
 }
 
 function isFavListEmpty(favouriteMeal) {
-  console.log(favouriteMeal);
-  console.log(Object.keys(favouriteMeal).length);
   if (Object.keys(favouriteMeal).length === 0) {
     emptyFavContainer.classList.remove("hide");
     mealCardsEle.classList.add("hide");
+    backPackerImgEle.src = "resources/assests/backpacker.png";
     mealCardsEle.style.paddingBottom = "0px";
+    emptyContainerPara.textContent = "No Favourite Meal Added";
   } else {
     emptyFavContainer.classList.add("hide");
     mealCardsEle.classList.remove("hide");
     mealCardsEle.style.paddingBottom = "40px";
+    backPackerImgEle.src = "";
   }
 }
 

@@ -21,7 +21,6 @@ function showMore(event) {
   let index = event.target.index;
 
   updateMealsList(index, list, searchListEle);
-  console.log(list);
   event.target.index += 5;
 
   if (event.target.index >= list.length) {

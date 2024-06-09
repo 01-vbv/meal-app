@@ -16,15 +16,6 @@ function removeFav(event) {
   event.target.parentNode.remove();
   delete favouriteMeal[id];
   isFavListEmpty(favouriteMeal);
-  // if (Object.keys(favouriteMeal).length === 0) {
-  //   emptyFavContainer.classList.remove("hide");
-  //   mealCardsEle.classList.add("hide");
-  //   console.log("hidden");
-  // } else {
-  //   emptyFavContainer.classList.add("hide");
-  //   mealCardsEle.classList.remove("hide");
-  //   console.log("visible");
-  // }
   localStorage.setItem("favouriteMeal", JSON.stringify(favouriteMeal));
 }
 
