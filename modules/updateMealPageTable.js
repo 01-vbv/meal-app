@@ -13,7 +13,10 @@ if (
 }
 
 function updateMealPageTable() {
-  while (targetMeal[`strIngredient${index}`] != "") {
+  while (
+    targetMeal[`strIngredient${index}`] != "" &&
+    targetMeal[`strIngredient${index}`] != null
+  ) {
     tableRow =
       tableRow +
       `<tr><td>${targetMeal[`strIngredient${index}`]}</td><td>${
