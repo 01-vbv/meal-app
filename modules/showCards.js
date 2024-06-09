@@ -24,7 +24,8 @@ async function showCards() {
     card.classList.add("card");
     mealName = document.createElement("p");
     let image = document.createElement("img");
-    image.src = "resources/assests/v233-aum-24-cooking-42-job106.jpg";
+    image.src =
+      "resources/assests/vector-pastel-plate-food-sticker-clipart.png";
     removeBtn = document.createElement("i");
     removeBtn.classList.add("fa-solid", "fa-circle-xmark", "remove-btn");
     removeBtn.setAttribute("id", keys[i]);
