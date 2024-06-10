@@ -38,6 +38,7 @@ async function searchResult() {
     value = getValue();
     if (value == "") {
       searchListEle.textContent = "";
+      noDataEle.style.display = "none";
       showMoreBtn.style.display = "none";
       return;
     }
