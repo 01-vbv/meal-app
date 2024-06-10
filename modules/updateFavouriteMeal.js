@@ -1,6 +1,7 @@
 let mealsData;
 let favouriteMeal = {};
 
+// ############ fav icon functionality ############3
 async function updateFavouriteMeal(event) {
   if (
     localStorage.getItem("favouriteMeal") !== "undefined" &&

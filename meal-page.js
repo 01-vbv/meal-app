@@ -1,4 +1,5 @@
-// import updateFavouriteMeal from "./modules/updateFavouriteMeal.js";
+// ############### Meal page functionality ##############
+
 import navigateToFavPage from "./modules/navigateToFavPage.js";
 import { showMealPage } from "./modules/showMealPage.js";
 import toggleLoader from "./modules/loader.js";
@@ -17,5 +18,4 @@ await toggleLoader(loaderEle, mainContentEle, false, "flex");
 videoInstrEle.innerHTML = `Video Instruction <i class="fa-solid fa-play"></i>`;
 videoInstrEle.setAttribute("href", targetMeal.strYoutube);
 
-// tableEle.insertAdjacentHTML("beforeend", tableRow);
 favMealsEle.addEventListener("click", navigateToFavPage);

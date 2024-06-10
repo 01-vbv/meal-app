@@ -1,19 +1,11 @@
-import getMealsData from "./FetchData.js";
+//########## Naviagte to meal page ##################
+import { getMealById } from "./FetchData.js";
 
 async function navigateToMealPage(event) {
-  let mealsData = await getMealsData(event.target.firstChar);
-  let targetMeal;
-  let i;
-
-  for (i = 0; i < mealsData.meals.length; i++) {
-    if (event.target.id == mealsData.meals[i].idMeal) {
-      targetMeal = mealsData.meals[i];
-      break;
-    }
-  }
+  let meal = await getMealById(event.target.id);
+  let targetMeal = meal.meals[0];
 
   localStorage.setItem("targetMeal", JSON.stringify(targetMeal));
-  localStorage.setItem("targetMealIndex", i + 1);
   window.open(`./meal-page.html`);
 }
 

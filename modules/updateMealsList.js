@@ -1,10 +1,9 @@
 import navigateToMealPage from "./navigateToMealPage.js";
 import updateFavouriteMeal from "./updateFavouriteMeal.js";
 
-function updateMealsList(initalIndex, list, ul) {
-  let index;
+// ################ Updates suggestion list in landing page ################
+async function updateMealsList(initalIndex, list, ul) {
   let favouriteMeal = {};
-
   if (
     localStorage.getItem("favouriteMeal") !== "undefined" &&
     localStorage.getItem("favouriteMeal") !== null
@@ -13,7 +12,7 @@ function updateMealsList(initalIndex, list, ul) {
   }
 
   for (
-    index = initalIndex;
+    let index = initalIndex;
     index < list.length && index < initalIndex + 5;
     index++
   ) {

@@ -1,3 +1,5 @@
+// ####################### favoutite page functionality ###########################3
+
 import { showCards } from "./modules/showCards.js";
 import toggleLoader from "./modules/loader.js";
 

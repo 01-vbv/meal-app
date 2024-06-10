@@ -1,15 +1,19 @@
-import getMealsData from "./modules/FetchData.js";
+// #################### Landing page ############################
+
+import { getMealsData } from "./modules/FetchData.js";
 import getSuggestions from "./modules/getSuggestions.js";
 import { updateMealsList } from "./modules/updateMealsList.js";
 import getValue from "./modules/getInputValue.js";
 import navigateToFavPage from "./modules/navigateToFavPage.js";
 import toggleLoader from "./modules/loader.js";
+import debounce from "./modules/debounce.js";
 
 const favMealsEle = document.getElementById("fav-meals");
 const searchboxEle = document.getElementById("search-box");
 const searchListEle = document.getElementById("search-list");
 const showMoreBtn = document.getElementById("show-more-btn");
 const loaderEle = document.querySelector(".loader");
+const noDataEle = document.querySelector(".no-data");
 
 let mealsData;
 let list;
@@ -19,7 +23,6 @@ let value;
 function showMore(event) {
   let list = event.target.list;
   let index = event.target.index;
-
   updateMealsList(index, list, searchListEle);
   event.target.index += 5;
 
@@ -29,35 +32,43 @@ function showMore(event) {
 }
 
 //################# Search Result (Main Function) ###########################
+
 async function searchResult() {
-  searchListEle.textContent = "";
-  value = getValue();
+  try {
+    value = getValue();
+    if (value == "") {
+      searchListEle.textContent = "";
+      showMoreBtn.style.display = "none";
+      return;
+    }
 
-  if (value == "") {
+    noDataEle.style.display = "none";
     showMoreBtn.style.display = "none";
-    return;
+    await toggleLoader(loaderEle, searchListEle, true, "flex");
+    mealsData = await getMealsData(value);
+    list = await getSuggestions(mealsData);
+    await updateMealsList(0, list, searchListEle);
+    await toggleLoader(loaderEle, searchListEle, false, "flex");
+
+    if (list.length > 5) {
+      showMoreBtn.style.display = "block";
+    } else {
+      showMoreBtn.style.display = "none";
+    }
+
+    [showMoreBtn.index, showMoreBtn.list] = [5, list];
+    showMoreBtn.addEventListener("click", showMore);
+  } catch (err) {
+    searchListEle.textContent = "";
+    await toggleLoader(loaderEle, searchListEle, false, "flex");
+    noDataEle.style.display = "block";
   }
-
-  await toggleLoader(loaderEle, searchListEle, true, "flex");
-  let firstChar = value.charAt(0);
-  mealsData = await getMealsData(firstChar);
-  await toggleLoader(loaderEle, searchListEle, false, "flex");
-
-  list = getSuggestions(value, mealsData);
-
-  updateMealsList(0, list, searchListEle);
-
-  if (list.length > 5) {
-    showMoreBtn.style.display = "block";
-  } else {
-    showMoreBtn.style.display = "none";
-  }
-
-  [showMoreBtn.index, showMoreBtn.list] = [5, list];
-  showMoreBtn.addEventListener("click", showMore);
-  showMoreBtn.addEventListener("dblclick", showMore);
 }
 
 //event listeners
-searchboxEle.addEventListener("keyup", searchResult);
+searchboxEle.addEventListener(
+  "keyup",
+  debounce(() => searchResult())
+);
+
 favMealsEle.addEventListener("click", navigateToFavPage);

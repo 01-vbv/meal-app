@@ -7,6 +7,7 @@ const mealDescEle = document.getElementById("meal-desc");
 
 let targetMeal = JSON.parse(localStorage.getItem("targetMeal"));
 
+// ########## Update meal page details ##################
 async function showMealPage() {
   targetMeal = JSON.parse(localStorage.getItem("targetMeal"));
   headingEle.textContent = targetMeal.strMeal;

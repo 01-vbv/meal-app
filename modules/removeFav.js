@@ -11,6 +11,7 @@ if (
   favouriteMeal = JSON.parse(localStorage.getItem("favouriteMeal"));
 }
 
+// ####### removes fav item card and entry ###################
 function removeFav(event) {
   let id = event.target.id;
   event.target.parentNode.remove();

@@ -168,8 +168,29 @@ button:hover{
     animation: spin 2s linear infinite;
 }
 
+.loader img {
+    background-color: transparent;
+}
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+
+.no-data {
+    display: none;
+    margin-top: 40px;
+}
+.no-data img{
+    width: 250px;
+}
+
+.no-data p {
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-size: 1em;
+    font-family: 'Lato-Light';
 }

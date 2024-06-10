@@ -12,6 +12,7 @@ if (
   favouriteMeal = JSON.parse(localStorage.getItem("favouriteMeal"));
 }
 
+// ######### Updates meal page table dynamically ################
 function updateMealPageTable() {
   while (
     targetMeal[`strIngredient${index}`] != "" &&

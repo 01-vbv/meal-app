@@ -17,7 +17,7 @@
         </h1>
       </label>
       <div class = "search-box-class">
-        <input type="text" name="search-box" id="search-box" autocomplete="off" placeholder="Search Meal"/>
+        <input type="text" name="search-box" id="search-box" autocomplete="off" spellcheck="false" placeholder="Search Meal"/>
         <i class="fa-solid fa-magnifying-glass"></i>
       </div>
     </div>
@@ -26,6 +26,10 @@
       </div>
       <button type="button" id="show-more-btn">Show more</button>
       <div class="loader"><i class="fa-solid fa-cookie"></i></div>
+      <div class="no-data">
+        <img src="resources/assests/hand-drawn-no-data-concept.png">
+        <p>No meals found</p>
+      </div>
     </div>
     <script type="module" src="index.js"></script>
     <script src="https://kit.fontawesome.com/b3348ae33f.js" crossorigin="anonymous"></script>

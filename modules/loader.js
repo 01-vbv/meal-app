@@ -1,3 +1,4 @@
+// ############### Loader for wait time ####################
 async function toggleLoader(
   loaderEle,
   containerEle,

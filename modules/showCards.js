@@ -18,6 +18,7 @@ let keys = Object.keys(favouriteMeal);
 let card;
 let mealName, removeBtn, exploreBtn;
 
+// ##################### display cards in favourite meal page #################
 async function showCards() {
   for (let i = 0; i < keys.length; i++) {
     card = document.createElement("div");
@@ -50,6 +51,7 @@ async function showCards() {
   isFavListEmpty(favouriteMeal);
 }
 
+// ################### Display placeholder image if no card added ################
 function isFavListEmpty(favouriteMeal) {
   if (Object.keys(favouriteMeal).length === 0) {
     emptyFavContainer.classList.remove("hide");
