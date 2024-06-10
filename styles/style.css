@@ -87,7 +87,8 @@ label h1{
 .search-box-class i {
     position: absolute;
     left: 20px;
-    top: 15px;
+    top: 10px;
+    font-size: 0.7em;
     color:rgb(109, 109, 109)
 } 
 input {
@@ -97,8 +98,8 @@ input {
     outline: none;
     border-radius: 30px;
     box-shadow: 1px 1px 10px 1px grey;
-    padding: 10px 60px 10px;
-    font-size: 18px;
+    padding: 10px 50px 10px;
+    font-size: 17px;
     letter-spacing: 1px;
 }
 
